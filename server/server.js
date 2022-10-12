@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 const {
   submitEmployee,
   getDefaultDept,
@@ -8,8 +9,9 @@ const {
 const app = express();
 const port = 8000;
 
-app.use(morgan('tiny'));
 app.use(express.json());
+app.use(morgan('tiny'));
+app.use(cors());
 
 app.get('/get_employee_form', getEmployeeForm);
 app.get('/get_default_department', getDefaultDept);
