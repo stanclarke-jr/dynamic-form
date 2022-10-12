@@ -19,7 +19,9 @@ const EmployeeForm = () => {
 
   useEffect(() => {
     const fetchForm = async () => {
-      const response = await fetch('/get_employee_form');
+      const response = await fetch(
+        'https://dyn4m1c-f0rm.herokuapp.com/get_employee_form'
+      );
       const form = await response.json();
       setFormData(form.data);
     };
@@ -29,7 +31,9 @@ const EmployeeForm = () => {
 
   useEffect(() => {
     const fetchDepartment = async () => {
-      const response = await fetch('/get_default_department');
+      const response = await fetch(
+        'https://dyn4m1c-f0rm.herokuapp.com/get_default_department'
+      );
       const department = await response.json();
       setDefaultDept(department?.data);
       if (defaultDept.length)
@@ -41,7 +45,7 @@ const EmployeeForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('/submit_employee', {
+    fetch('https://dyn4m1c-f0rm.herokuapp.com/submit_employee', {
       method: 'POST',
       body: JSON.stringify(employeeData),
       headers: {
@@ -74,6 +78,7 @@ const EmployeeForm = () => {
     const departments = document.querySelectorAll('#departments');
     departments[0][0].selected = true;
   };
+
   if (!formData) return <p>Loading...</p>;
 
   return (
