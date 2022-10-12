@@ -17,6 +17,6 @@ app.get('/get_employee_form', getEmployeeForm);
 app.get('/get_default_department', getDefaultDept);
 app.post('/submit_employee', submitEmployee);
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Hello World app listening on port ${port}`);
 });
