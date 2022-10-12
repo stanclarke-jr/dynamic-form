@@ -1,0 +1,37 @@
+{
+	"form_title": "Hello World",
+	"fields": [
+		{
+			"key": "person name",
+			"type": "INPUT_BOX",
+			"label": "Person Name",
+			"mandatory": "true"
+		},
+		{
+			"key": "is_employee",
+			"type": "RADIO_BUTTON",
+			"label": "Is Employee?",
+			"value": "yes",
+			"mandatory": "true"
+		},
+		{
+			"key": "departments",
+			"type": "DROPDOWN",
+			"label": "Department",
+			"mandatory": "true",
+			"options": [
+				{
+					"label": "HR",
+					"value": "HR"
+				},
+				{
+					"label": "Development",
+					"value": "Development"
+				}
+			]
+		}
+	]
+}
+
+
+
