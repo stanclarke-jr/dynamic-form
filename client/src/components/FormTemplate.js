@@ -19,36 +19,42 @@ const FormTemplate = ({
 
       if (type === 'INPUT_BOX')
         return (
-          <TextInput
-            key={key}
-            name={name}
-            isRequired={isRequired}
-            handleChange={handleChange}
-          />
+          <InputWrapper>
+            <TextInput
+              key={key}
+              name={name}
+              isRequired={isRequired}
+              handleChange={handleChange}
+            />
+          </InputWrapper>
         );
 
       if (type === 'RADIO_BUTTON')
         return (
-          <CheckboxInput
-            key={key}
-            name={key}
-            label={label}
-            value={value}
-            isRequired={isRequired}
-            handleChange={handleChange}
-          />
+          <InputWrapper>
+            <CheckboxInput
+              key={key}
+              name={key}
+              label={label}
+              value={value}
+              isRequired={isRequired}
+              handleChange={handleChange}
+            />
+          </InputWrapper>
         );
 
       if (type === 'DROPDOWN')
         return (
-          <SelectInput
-            key={key}
-            name={key}
-            defaultDept={defaultDept}
-            options={options}
-            isRequired={isRequired}
-            handleChange={handleChange}
-          />
+          <InputWrapper>
+            <SelectInput
+              key={key}
+              name={key}
+              defaultDept={defaultDept}
+              options={options}
+              isRequired={isRequired}
+              handleChange={handleChange}
+            />
+          </InputWrapper>
         );
       return null;
     });
@@ -71,11 +77,13 @@ const FormTemplate = ({
 export default FormTemplate;
 
 // ----- STYLED COMPONENTS ----- //
-
 const Logo = styled.div`
   width: 320px;
   height: 200px;
   background: no-repeat center url(${(props) => props.imgSrc});
+`;
+const InputWrapper = styled.div`
+  padding: 0.2rem 0;
 `;
 // const PlaceholderImage = styled.div`
 //   width: 320px;

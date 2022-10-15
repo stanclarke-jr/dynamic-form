@@ -6,9 +6,10 @@ const FormStyles = styled.form`
   padding: 5px;
   box-shadow: 0 60px 120px rgba(71, 69, 123, 0.24),
     0 15px 35px rgba(71, 69, 123, 0.24);
-  border-radius: 3px;
+  border-radius: 5px;
   fieldset {
     border: none;
+    padding-bottom: 1rem;
   }
   header {
     text-align: center;
@@ -46,7 +47,7 @@ const FormStyles = styled.form`
     padding: 0.6rem 0.9rem;
     margin: 1.1rem 0.3rem 0 0;
   }
-  & :nth-child(10) {
+  & :nth-child(6) {
     color: var(--black);
     background-color: #fff;
     border: 1.75px solid var(--lightGrey);
