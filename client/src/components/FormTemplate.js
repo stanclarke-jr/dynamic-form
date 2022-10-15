@@ -56,7 +56,8 @@ const FormTemplate = ({
 
   return (
     <FormStyles onSubmit={handleSubmit}>
-      <PlaceholderImage>320x200</PlaceholderImage>
+      {/* <PlaceholderImage>320x200</PlaceholderImage> */}
+      <Logo imgSrc={`/logo.png`} alt={`gtechna logo`} />
       <fieldset>
         <header>{title}</header>
         {renderInputFields(fields)}
@@ -71,14 +72,19 @@ export default FormTemplate;
 
 // ----- STYLED COMPONENTS ----- //
 
-const PlaceholderImage = styled.div`
+const Logo = styled.div`
   width: 320px;
   height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  color: #777;
-  background-color: #f0f0f0;
-  margin-bottom: 1.2rem;
+  background: no-repeat center url(${(props) => props.imgSrc});
 `;
+// const PlaceholderImage = styled.div`
+//   width: 320px;
+//   height: 200px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: 1.5rem;
+//   color: #777;
+//   background-color: #f0f0f0;
+//   margin-bottom: 1.2rem;
+// `;

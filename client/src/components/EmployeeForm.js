@@ -20,7 +20,7 @@ const EmployeeForm = () => {
   useEffect(() => {
     const fetchForm = async () => {
       const response = await fetch(
-        'https://dyn4m1c-f0rm.herokuapp.com/get_employee_form'
+        '/api/forms/employee_form/get_employee_form'
       );
       const form = await response.json();
       setFormData(form.data);
@@ -32,7 +32,7 @@ const EmployeeForm = () => {
   useEffect(() => {
     const fetchDepartment = async () => {
       const response = await fetch(
-        'https://dyn4m1c-f0rm.herokuapp.com/get_default_department'
+        '/api/forms/employee_form/get_default_department'
       );
       const department = await response.json();
       setDefaultDept(department?.data);
@@ -45,7 +45,7 @@ const EmployeeForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('https://dyn4m1c-f0rm.herokuapp.com/submit_employee', {
+    fetch('/api/forms/employee_form/submit_employee', {
       method: 'POST',
       body: JSON.stringify(employeeData),
       headers: {
