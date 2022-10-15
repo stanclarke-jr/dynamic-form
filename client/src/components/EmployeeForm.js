@@ -20,7 +20,7 @@ const EmployeeForm = () => {
   useEffect(() => {
     const fetchForm = async () => {
       const response = await fetch(
-        '/api/forms/employee_form/get_employee_form'
+        'https://dyn4m1c-f0rm.herokuapp.com/api/forms/employee_form/get_employee_form'
       );
       const form = await response.json();
       setFormData(form.data);
@@ -32,7 +32,7 @@ const EmployeeForm = () => {
   useEffect(() => {
     const fetchDepartment = async () => {
       const response = await fetch(
-        '/api/forms/employee_form/get_default_department'
+        'https://dyn4m1c-f0rm.herokuapp.com/api/forms/employee_form/get_default_department'
       );
       const department = await response.json();
       setDefaultDept(department?.data);
@@ -45,14 +45,17 @@ const EmployeeForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('/api/forms/employee_form/submit_employee', {
-      method: 'POST',
-      body: JSON.stringify(employeeData),
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    })
+    fetch(
+      'https://dyn4m1c-f0rm.herokuapp.com/api/forms/employee_form/submit_employee',
+      {
+        method: 'POST',
+        body: JSON.stringify(employeeData),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      }
+    )
       .then((response) => response.json())
       .then((jsonData) => {
         const { success } = jsonData;
