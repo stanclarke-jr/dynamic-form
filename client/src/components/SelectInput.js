@@ -7,6 +7,7 @@ const SelectInput = ({
   handleChange,
 }) => {
   if (!defaultDept) return null;
+
   return (
     <>
       <label htmlFor={name}>{label}</label>

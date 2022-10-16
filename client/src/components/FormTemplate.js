@@ -12,16 +12,15 @@ const FormTemplate = ({
   handleChange,
 }) => {
   const renderInputFields = (fields) => {
-    return fields.map((field) => {
+    return fields?.map((field) => {
       const { key, type, label, value, mandatory, options } = field;
       const name = label.includes('Name') ? label.split(' ')[1] : null;
       const isRequired = mandatory === 'true';
 
       if (type === 'INPUT_BOX')
         return (
-          <InputWrapper>
+          <InputWrapper key={key}>
             <TextInput
-              key={key}
               name={name}
               isRequired={isRequired}
               handleChange={handleChange}
@@ -31,9 +30,8 @@ const FormTemplate = ({
 
       if (type === 'RADIO_BUTTON')
         return (
-          <InputWrapper>
+          <InputWrapper key={key}>
             <CheckboxInput
-              key={key}
               name={key}
               label={label}
               value={value}
@@ -45,9 +43,8 @@ const FormTemplate = ({
 
       if (type === 'DROPDOWN')
         return (
-          <InputWrapper>
+          <InputWrapper key={key}>
             <SelectInput
-              key={key}
               name={key}
               defaultDept={defaultDept}
               options={options}
